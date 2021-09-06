@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.test.runner._priv</value>
+  <value name="is_public">false</value>
+  <value name="encodeutf8">true</value>
+  <value name="shared">CnB1YmxpYyBzdGF0aWMgU3RyaW5nW10gYXZhaWxhYmxlQ2FzZXMoKSB7CgoJRmlsZVtdIGZpbGVz
+ID0gbmV3IEZpbGUoIi4vcGFja2FnZXMiKS5saXN0RmlsZXMobmV3IEZpbGVuYW1lRmlsdGVyKCkg
+ewoJCQoJCUBPdmVycmlkZQoJCXB1YmxpYyBib29sZWFuIGFjY2VwdChGaWxlIGRpciwgU3RyaW5n
+IG5hbWUpIHsKCQkJCgkJCWlmIChuZXcgRmlsZShkaXIsIG5hbWUgKyAiL3Jlc291cmNlcy90ZXN0
+L3NldHVwIikuZXhpc3RzKCkpIHsKCQkJCXJldHVybiBuZXcgRmlsZShkaXIsIG5hbWUgKyAiL3Jl
+c291cmNlcy90ZXN0L3NldHVwIikubGlzdEZpbGVzKG5ldyBGaWxlbmFtZUZpbHRlcigpIHsKCQkJ
+CQlAT3ZlcnJpZGUKCQkJCQlwdWJsaWMgYm9vbGVhbiBhY2NlcHQoRmlsZSBkaXIsIFN0cmluZyBu
+YW1lKSB7CgkJCQkJCXJldHVybiBuYW1lLmVuZHNXaXRoKCIueG1sIik7CgkJCQkJfQoJCQkJfSku
+bGVuZ3RoID4gMDsKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBmYWxzZTsKCQkJfQoJCX0KCX0pOwoJ
+CglTdHJpbmdbXSBwYWNrYWdlcyA9IG5ldyBTdHJpbmdbZmlsZXMubGVuZ3RoXTsKCQoJZm9yIChp
+bnQgeiA9IDA7IHogPCBmaWxlcy5sZW5ndGg7IHorKykgewoJCQoJCXBhY2thZ2VzW3pdID0gZmls
+ZXNbel0uZ2V0TmFtZSgpOwoJfTsKCQoJcmV0dXJuIHBhY2thZ2VzOwp9CgpwdWJsaWMgc3RhdGlj
+IFN0cmluZyBnZXRIb3N0TmFtZSgpIHRocm93cyBTZXJ2aWNlRXhjZXB0aW9uIHsKICAgIAoJdHJ5
+IHsKCQlyZXR1cm4gSW5ldEFkZHJlc3MuZ2V0TG9jYWxIb3N0KCkuZ2V0SG9zdE5hbWUoKTsKCX0g
+Y2F0Y2ggKFVua25vd25Ib3N0RXhjZXB0aW9uIGUpIHsKCQl0aHJvdyBuZXcgU2VydmljZUV4Y2Vw
+dGlvbihlKTsKCX0KfQoKcHJpdmF0ZSBzdGF0aWMgY2xhc3MgWmlwcGVyIHsKCQoJcHJpdmF0ZSBT
+dHJpbmcgX3NvdXJjZUZvbGRlcjsKCQoJcHJpdmF0ZSBMaXN0IDxTdHJpbmc+IGZpbGVMaXN0ID0g
+bmV3IEFycmF5TGlzdDxTdHJpbmc+KCk7CgkKCXB1YmxpYyB2b2lkIHppcEl0KFN0cmluZyBzb3Vy
+Y2VGb2xkZXIsIFN0cmluZyB6aXBGaWxlKSB7CgkJCgkJdGhpcy5fc291cmNlRm9sZGVyID0gc291
+cmNlRm9sZGVyOwoJCgkJdGhpcy5nZW5lcmF0ZUZpbGVMaXN0KG5ldyBGaWxlKHNvdXJjZUZvbGRl
+cikpOwoJCQkKCSAgICBieXRlW10gYnVmZmVyID0gbmV3IGJ5dGVbMTAyNF07CgkgICAgU3RyaW5n
+IHNvdXJjZSA9IG5ldyBGaWxlKHNvdXJjZUZvbGRlcikuZ2V0TmFtZSgpOwoJICAgIEZpbGVPdXRw
+dXRTdHJlYW0gZm9zID0gbnVsbDsKCSAgICBaaXBPdXRwdXRTdHJlYW0gem9zID0gbnVsbDsKCSAg
+ICB0cnkgewoJICAgICAgICBmb3MgPSBuZXcgRmlsZU91dHB1dFN0cmVhbSh6aXBGaWxlKTsKCSAg
+ICAgICAgem9zID0gbmV3IFppcE91dHB1dFN0cmVhbShmb3MpOwoJCgkgICAgICAgIFN5c3RlbS5v
+dXQucHJpbnRsbigiT3V0cHV0IHRvIFppcCA6ICIgKyB6aXBGaWxlKTsKCSAgICAgICAgRmlsZUlu
+cHV0U3RyZWFtIGluID0gbnVsbDsKCQoJICAgICAgICBmb3IgKFN0cmluZyBmaWxlOiB0aGlzLmZp
+bGVMaXN0KSB7CgkgICAgICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oIkZpbGUgQWRkZWQgOiAi
+ICsgZmlsZSk7CgkgICAgICAgICAgICBaaXBFbnRyeSB6ZSA9IG5ldyBaaXBFbnRyeShzb3VyY2Ug
+KyBGaWxlLnNlcGFyYXRvciArIGZpbGUpOwoJICAgICAgICAgICAgem9zLnB1dE5leHRFbnRyeSh6
+ZSk7CgkgICAgICAgICAgICB0cnkgewoJICAgICAgICAgICAgICAgIGluID0gbmV3IEZpbGVJbnB1
+dFN0cmVhbSh0aGlzLl9zb3VyY2VGb2xkZXIgKyBGaWxlLnNlcGFyYXRvciArIGZpbGUpOwoJICAg
+ICAgICAgICAgICAgIGludCBsZW47CgkgICAgICAgICAgICAgICAgd2hpbGUgKChsZW4gPSBpbiAu
+cmVhZChidWZmZXIpKSA+IDApIHsKCSAgICAgICAgICAgICAgICAgICAgem9zLndyaXRlKGJ1ZmZl
+ciwgMCwgbGVuKTsKCSAgICAgICAgICAgICAgICB9CgkgICAgICAgICAgICB9IGZpbmFsbHkgewoJ
+ICAgICAgICAgICAgICAgIGluLmNsb3NlKCk7CgkgICAgICAgICAgICB9CgkgICAgICAgIH0KCQoJ
+ICAgICAgICB6b3MuY2xvc2VFbnRyeSgpOwoJICAgICAgICBTeXN0ZW0ub3V0LnByaW50bG4oIkZv
+bGRlciBzdWNjZXNzZnVsbHkgY29tcHJlc3NlZCIpOwoJCgkgICAgfSBjYXRjaCAoSU9FeGNlcHRp
+b24gZXgpIHsKCSAgICAgICAgZXgucHJpbnRTdGFja1RyYWNlKCk7CgkgICAgfSBmaW5hbGx5IHsK
+CSAgICAgICAgdHJ5IHsKCSAgICAgICAgICAgIHpvcy5jbG9zZSgpOwoJICAgICAgICB9IGNhdGNo
+IChJT0V4Y2VwdGlvbiBlKSB7CgkgICAgICAgICAgICBlLnByaW50U3RhY2tUcmFjZSgpOwoJICAg
+ICAgICB9CgkgICAgfQoJfQoJCglwdWJsaWMgdm9pZCBnZW5lcmF0ZUZpbGVMaXN0KEZpbGUgbm9k
+ZSkgewoJICAgIC8vIGFkZCBmaWxlIG9ubHkKCSAgICBpZiAobm9kZS5pc0ZpbGUoKSkgewoJICAg
+ICAgICBmaWxlTGlzdC5hZGQoZ2VuZXJhdGVaaXBFbnRyeShub2RlLnRvU3RyaW5nKCkpKTsKCSAg
+ICB9CgkKCSAgICBpZiAobm9kZS5pc0RpcmVjdG9yeSgpKSB7CgkgICAgICAgIFN0cmluZ1tdIHN1
+Yk5vdGUgPSBub2RlLmxpc3QoKTsKCSAgICAgICAgZm9yIChTdHJpbmcgZmlsZW5hbWU6IHN1Yk5v
+dGUpIHsKCSAgICAgICAgICAgIGdlbmVyYXRlRmlsZUxpc3QobmV3IEZpbGUobm9kZSwgZmlsZW5h
+bWUpKTsKCSAgICAgICAgfQoJICAgIH0KCX0KCQoJcHJpdmF0ZSBTdHJpbmcgZ2VuZXJhdGVaaXBF
+bnRyeShTdHJpbmcgZmlsZSkgewoJCQkJCgkgICAgcmV0dXJuIGZpbGUuc3Vic3RyaW5nKF9zb3Vy
+Y2VGb2xkZXIubGVuZ3RoKCkgKyAxLCBmaWxlLmxlbmd0aCgpKTsKCX0KfQ==</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.BufferedReader</value>
+    <value>java.io.File</value>
+    <value>java.io.FileInputStream</value>
+    <value>java.io.FileNotFoundException</value>
+    <value>java.io.FileOutputStream</value>
+    <value>java.io.FilenameFilter</value>
+    <value>java.io.IOException</value>
+    <value>java.io.InputStream</value>
+    <value>java.io.InputStreamReader</value>
+    <value>java.net.InetAddress</value>
+    <value>java.net.UnknownHostException</value>
+    <value>java.nio.file.FileSystems</value>
+    <value>java.nio.file.Files</value>
+    <value>java.nio.file.NoSuchFileException</value>
+    <value>java.nio.file.Path</value>
+    <value>java.nio.file.Paths</value>
+    <value>java.nio.charset.StandardCharsets</value>
+    <value>java.util.ArrayList</value>
+    <value>java.util.List</value>
+    <value>java.util.stream.Collectors</value>
+    <value>java.util.stream.Stream</value>
+    <value>java.util.zip.ZipEntry</value>
+    <value>java.util.zip.ZipOutputStream</value>
+    <value>com.wm.app.b2b.server.ServerAPI</value>
+    <value>com.wm.app.b2b.server.ServerStartupNotifier</value>
+  </array>
+</Values>
