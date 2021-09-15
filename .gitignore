@@ -1,0 +1,6 @@
+/bin/
+.DS_Store
+xml.bak
+pub/results/*.xml
+pub/results/html/*
+pub/completed.txt
