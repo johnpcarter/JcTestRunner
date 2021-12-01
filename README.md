@@ -21,5 +21,7 @@ http://<host>:<port>/rad/jc.test.runner:api/status/{waitInterval}/{maxWaitCount}
 response: NONE, COMPLETED, FAILED
 
 you can even pull the test results if you don’t want to use the web page.
+```
 http://<host>:<port>/rad/jc.test.runner:api/instances/pull 
+```
 
