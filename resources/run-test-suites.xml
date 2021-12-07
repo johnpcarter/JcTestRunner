@@ -233,14 +233,14 @@ You can update/modify "runall-test" target to exclude/include test suite package
 				<echo>Packages directory of Integration Server explicitly specified: ${webMethods.integrationServer.packages.dir}</echo>
 			</then>
 			<elseif>
-				<available file="${webMethods.home}/IntegrationServer/packages" type="dir" />
+				<available file="${webMethods.package.dir}" type="dir" />
 				<then>
-					<property name="webMethods.integrationServer.packages.dir" value="${webMethods.home}/IntegrationServer/packages" />
+					<property name="webMethods.integrationServer.packages.dir" value="${webMethods.package.dir}" />
 					<echo>Packages directory of Integration Server found: ${webMethods.integrationServer.packages.dir}</echo>
 				</then>
 			</elseif>
 			<else>
-				<property name="webMethods.integrationServer.packages.dir" value="${webMethods.home}/IntegrationServer/packages" />
+				<property name="webMethods.integrationServer.packages.dir" value="${webMethods.package.dir}" />
 				<echo>Packages directory of Integration Server found: ${webMethods.integrationServer.packages.dir}</echo>
 			</else>
 		</antcontrib:if>
