@@ -16,7 +16,8 @@ if [ "${SAG_HOME}x" == "x" ]
 then
 	if [[ "$OSTYPE" == "darwin"* ]]
 	then
-		SAG_HOME=/Applications/SoftwareAG/10.7
+		SAG_HOME=/Applications/SoftwareAG/10.11
+		cp run-test-suites.properties.mac run-test-suites.properties
 	else
 		SAG_HOME=/opt/softwareag
 	fi
@@ -27,8 +28,10 @@ fi
 if [ -r $SAG_HOME/IntegrationServer/instances ]
 then
 	cd ${SAG_HOME}/IntegrationServer/instances/default/packages/JcTestRunner/resources
+	cp run-test-suites.properties.is run-test-suites.properties
 else
 	cd ${SAG_HOME}/IntegrationServer/packages/JcTestRunner/resources
+	cp run-test-suites.properties.msr run-test-suites.properties
 fi
 
 chmod u+x ./ant/bin/runant.*

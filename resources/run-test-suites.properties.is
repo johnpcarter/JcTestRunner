@@ -1,0 +1,17 @@
+#Integration Server definition
+#Thu Jul 02 16:22:14 CEST 2020
+webMethods.test.setup.external.classpath.layout=resources/test/classes,resources/java/classes,resources/test/jars,resources/java/jars,resources/jars,
+webMethods.test.profile.result.location=/opt/softwareag/IntegrationServer/instances/default/packages/JcTestRunner/pub/results
+
+webMethods.home=/opt/softwareag
+webMethods.lib=/opt/softwareag/IntegrationServer/instances/default/packages/JcTestRunner/code/jars
+webMethods.projects.location=/opt/softwareag/IntegrationServer/instances/default/packages
+webMethods.package.dir=/opt/softwareag/IntegrationServer/instances/default/packages
+test.reports.dir=/opt/softwareag/IntegrationServer/instances/default/packages/JcTestRunner/pub/results
+
+webMethods.test.setup.profile.mode=COVERAGE
+webMethods.integrationServer.name=localhost
+webMethods.integrationServer.port=5555
+webMethods.integrationServer.ssl=false
+webMethods.integrationServer.userid=Administrator
+webMethods.integrationServer.password=manage
