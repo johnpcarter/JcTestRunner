@@ -14,28 +14,29 @@ PATH=./ant/bin:/$PATH;export PATH
 
 if [ "${SAG_HOME}x" == "x" ]
 then
-	if [[ $OSTYPE == darwin* ]]
-	then
-		SAG_HOME=/Applications/SoftwareAG/10.11
-		
-		cd ${SAG_HOME}/IntegrationServer/instances/default/packages/JcTestRunner/resources
-		cp run-test-suites.properties.mac run-test-suites.properties
-	else
-		SAG_HOME=/opt/softwareag
-		
-		# Check if classic Integration Server or MSR
-		
-		if [ -r $SAG_HOME/IntegrationServer/instances ]
-		then
-			cd ${SAG_HOME}/IntegrationServer/instances/default/packages/JcTestRunner/resources
-			cp run-test-suites.properties.is run-test-suites.properties
-		else
-			cd ${SAG_HOME}/IntegrationServer/packages/JcTestRunner/resources
-			cp run-test-suites.properties.msr run-test-suites.properties
-		fi
-	fi
+	SAG_HOME=/opt/softwareag
 fi
 
+# Check if classic Integration Server or MSR
+		
+if [ -r $SAG_HOME/IntegrationServer/instances ]
+then
+	cd ${SAG_HOME}/IntegrationServer/instances/default/packages/JcTestRunner/resources
+	cp run-test-suites.properties.is run-test-suites.properties
+elif [ -r ${SAG_HOME}/IntegrationServer/packages ]
+then
+	cd ${SAG_HOME}/IntegrationServer/packages/JcTestRunner/resources
+	cp run-test-suites.properties.msr run-test-suites.properties
+elif [[ $OSTYPE == darwin* ]]
+then
+	SAG_HOME=/Applications/SoftwareAG/10.11
+	
+	cd ${SAG_HOME}/IntegrationServer/instances/default/packages/JcTestRunner/resources
+	cp run-test-suites.properties.mac run-test-suites.properties
+else
+	SAG_HOME=/opt/softwareag
+fi
+		
 chmod u+x ./ant/bin/runant.*
 chmod u+x ./ant/bin/antRun*
 chmod u+x ./ant/bin/complete*.*
