@@ -4,3 +4,5 @@ xml.bak
 pub/results/*.xml
 pub/results/html/*
 pub/completed.txt
+pub/SAG*
+pub/running.txt
