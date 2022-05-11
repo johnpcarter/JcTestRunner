@@ -57,11 +57,11 @@ public final class _priv
 	{
 		// --- <<IS-START(_run)>> ---
 		// @sigtype java 3.5
-		// [i] field:0:optional packages
+		// [i] field:0:optional package
 		// [o] field:0:required exeStatus
 		// [o] field:0:optional error
 		IDataCursor c = pipeline.getCursor();
-		String packages = IDataUtil.getString(c, "packages");
+		String packageName = IDataUtil.getString(c, "package");
 		
 		if (!allowAutomaticRun()) 
 			return;
@@ -81,8 +81,8 @@ public final class _priv
 		
 		Process proc = null;
 		
-		if (packages != null) 
-			proc = Runtime.getRuntime().exec(String.format("./packages/JcTestRunner/resources/run-all-tests.sh " + packages, "./packages/JcTestRunner/resources"));
+		if (packageName != null) 
+			proc = Runtime.getRuntime().exec(String.format("./packages/JcTestRunner/resources/run-all-tests.sh " + packageName, "./packages/JcTestRunner/resources"));
 		else
 			proc = Runtime.getRuntime().exec(String.format("./packages/JcTestRunner/resources/run-all-tests.sh", "./packages/JcTestRunner/resources"));
 		
@@ -118,48 +118,6 @@ public final class _priv
 		} catch (IOException e) {
 			ServerAPI.logError(e);
 		}
-		// --- <<IS-END>> ---
-
-                
-	}
-
-
-
-	public static final void convertToString (IData pipeline)
-        throws ServiceException
-	{
-		// --- <<IS-START(convertToString)>> ---
-		// @sigtype java 3.5
-		// [i] object:1:required list
-		// [i] field:0:optional separator
-		// [o] field:0:required out
-		// pipeline in
-		
-		IDataCursor pipelineCursor = pipeline.getCursor();
-		Object[] list = IDataUtil.getObjectArray(pipelineCursor, "list");
-		String separator = IDataUtil.getString(pipelineCursor, "separator");
-		
-		// process
-		
-		if (separator == null)
-			separator = System.lineSeparator();
-		
-		String out = "";
-		
-		if (list != null) {
-			
-			for(Object o : list) {
-				out += "\"" + o.toString() + "\"" + separator;
-			}
-			
-			if (list.length > 0)
-				out = out.substring(0, out.length()-1);
-		}
-		
-		// pipeline out
-		
-		IDataUtil.put(pipelineCursor, "out", out);
-		pipelineCursor.destroy();
 		// --- <<IS-END>> ---
 
                 

@@ -62,14 +62,19 @@ then
 	replace_text_properties Administrator ${is_password};
 fi
 
-if [ "${is_packages}x" == "x" ]
+if [ "${1}x" != "x" ]
 then
-	is_packages="*"
+	is_package=$1
+fi
+
+if [ "${is_package}x" == "x" ]
+then
+	is_package="*"
 fi
 
 touch ../pub/running.txt
 
-ant -f run-test-suites.xml -Dpackages=${is_packages} runall-test
+ant -f run-test-suites.xml -Dpackage=${is_package} runall-test
 
 rm ../pub/running.txt
 touch ../pub/completed.txt
