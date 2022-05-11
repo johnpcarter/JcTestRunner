@@ -25,3 +25,26 @@ you can even pull the test results if you don’t want to use the web page.
 http://<host>:<port>/rad/jc.test.runner:api/instances/pull 
 ```
 
+If you don't want to run packages automatically then set the global variables
+
+jc.test.runner.manual=true
+
+in which case you will need to run tests manually via the service
+
+```
+jc.test.runner.services:run
+```
+
+which will run all tests by default unless you provide the name of the package you wish to test
+via the package input.
+
+or via the API (all packages)
+
+```
+http://<host>:<port>/rad/jc.test.runner:api/run
+```
+
+or specifically for a package such as JcHelloWorld
+```
+http://<host>:<port>/rad/jc.test.runner:api/run/JcHelloWorld
+```
