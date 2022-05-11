@@ -6,6 +6,9 @@
   <value name="node_nsName">jc.test.runner:api</value>
   <value name="node_pkg">JcTestRunner</value>
   <value name="is_public">false</value>
+  <null name="sourceUri"/>
+  <null name="swaggerUrl"/>
+  <Boolean name="modifiable">true</Boolean>
   <record name="generalInfo" javaclass="com.wm.util.Values">
     <value name="specVersion">2.0</value>
     <value name="hostName">localhost:5555</value>
@@ -35,9 +38,6 @@
       <null name="licenseUrl"/>
     </record>
   </record>
-  <null name="sourceUri"/>
-  <null name="swaggerUrl"/>
-  <Boolean name="modifiable">true</Boolean>
   <record name="restDefinitions" javaclass="com.wm.util.Values">
     <record name="jc.test.runner.docs:TestSuiteResults.instances.testSuites.cases" javaclass="com.wm.util.Values">
       <value name="name">cases</value>
@@ -170,7 +170,7 @@
           <null name="defaultValue"/>
           <value name="refDefinition">jc.test.runner.docs:TestSuiteResults.instances.testSuites.cases</value>
           <value name="definitionName">cases</value>
-          <Boolean name="includeInRad">false</Boolean>
+          <Boolean name="includeInRad">true</Boolean>
         </record>
       </record>
     </record>
@@ -212,7 +212,7 @@
           <null name="defaultValue"/>
           <value name="refDefinition">jc.test.runner.docs:TestSuiteResults</value>
           <value name="definitionName">TestSuiteResults</value>
-          <Boolean name="includeInRad">false</Boolean>
+          <Boolean name="includeInRad">true</Boolean>
         </record>
       </record>
     </record>
@@ -245,7 +245,7 @@
           <null name="defaultValue"/>
           <value name="refDefinition">jc.test.runner.docs:TestSuiteResults.instances.testSuites</value>
           <value name="definitionName">testSuites</value>
-          <Boolean name="includeInRad">false</Boolean>
+          <Boolean name="includeInRad">true</Boolean>
         </record>
       </record>
     </record>
@@ -278,7 +278,7 @@
           <null name="defaultValue"/>
           <value name="refDefinition">jc.test.runner.docs:TestSuiteResults.instances</value>
           <value name="definitionName">instances</value>
-          <Boolean name="includeInRad">false</Boolean>
+          <Boolean name="includeInRad">true</Boolean>
         </record>
       </record>
     </record>
@@ -395,6 +395,21 @@
         <record name="GET" javaclass="com.wm.util.Values">
           <value name="operationType">GET</value>
           <value name="nsName">/run_GET</value>
+          <record name="parameters" javaclass="com.wm.util.Values">
+            <record name="packages" javaclass="com.wm.util.Values">
+              <value name="name">packages</value>
+              <value name="source">QUERY</value>
+              <value name="type">STRING</value>
+              <null name="description"/>
+              <Boolean name="isRequired">true</Boolean>
+              <Boolean name="isArray">true</Boolean>
+              <value name="collectionFormat">csv</value>
+              <null name="defaultValue"/>
+              <null name="refDefinition"/>
+              <null name="definitionName"/>
+              <Boolean name="includeInRad">true</Boolean>
+            </record>
+          </record>
           <record name="responses" javaclass="com.wm.util.Values">
             <record name="200" javaclass="com.wm.util.Values">
               <value name="statusCode">200</value>

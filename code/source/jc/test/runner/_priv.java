@@ -7,6 +7,8 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.util.GlobalVariables;
+import com.wm.app.b2b.server.globalvariables.GlobalVariablesManager;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -55,8 +57,15 @@ public final class _priv
 	{
 		// --- <<IS-START(_run)>> ---
 		// @sigtype java 3.5
+		// [i] field:0:optional packages
 		// [o] field:0:required exeStatus
 		// [o] field:0:optional error
+		IDataCursor c = pipeline.getCursor();
+		String packages = IDataUtil.getString(c, "packages");
+		
+		if (!allowAutomaticRun()) 
+			return;
+		
 		try {
 			Process proc1 = Runtime.getRuntime().exec(String.format("chmod u+x ./packages/JcTestRunner/resources/run-all-tests.sh", "./packages/JcTestRunner/resources"));
 			
@@ -66,45 +75,91 @@ public final class _priv
 			} catch (InterruptedException e) {
 				ServerAPI.logError(e);
 			}
-			}
+		}
 			
-			System.out.println("permission exit status " + proc1.exitValue());
+		System.out.println("permission exit status " + proc1.exitValue());
 		
-			Process proc = Runtime.getRuntime().exec(String.format("./packages/JcTestRunner/resources/run-all-tests.sh", "./packages/JcTestRunner/resources"));
-			
-			synchronized(proc) {
-				try {
-					proc.wait();
-				} catch (InterruptedException e) {
-					ServerAPI.logError(e);
-				}
-			}
-			
-			System.out.println("run exit status " + proc.exitValue());
+		Process proc = null;
 		
-			String error = null;
+		if (packages != null) 
+			proc = Runtime.getRuntime().exec(String.format("./packages/JcTestRunner/resources/run-all-tests.sh " + packages, "./packages/JcTestRunner/resources"));
+		else
+			proc = Runtime.getRuntime().exec(String.format("./packages/JcTestRunner/resources/run-all-tests.sh", "./packages/JcTestRunner/resources"));
+		
+		synchronized(proc) {
+			try {
+				proc.wait();
+			} catch (InterruptedException e) {
+				ServerAPI.logError(e);
+			}
+		}
 			
-			if (proc.exitValue() > 0) {
-				error = new BufferedReader(
-				      new InputStreamReader(proc.getErrorStream(), StandardCharsets.UTF_8))
-				        .lines()
-				        .collect(Collectors.joining("\n"));
+		System.out.println("run exit status " + proc.exitValue());
+		
+		String error = null;
+			
+		if (proc.exitValue() > 0) {
+			error = new BufferedReader(
+			      new InputStreamReader(proc.getErrorStream(), StandardCharsets.UTF_8))
+			        .lines()
+			        .collect(Collectors.joining("\n"));
 				
-				System.out.println("run error " + error);
+			System.out.println("run error " + error);
 		
-			}
+		}
 			
-			IDataCursor c = pipeline.getCursor();
-			IDataUtil.put(c,  "exeStatus", "" + proc.exitValue());
+		IDataUtil.put(c,  "exeStatus", "" + proc.exitValue());
 			
-			if (error != null) {
-				IDataUtil.put(c,  "error", "" + error);
+		if (error != null) {
+			IDataUtil.put(c,  "error", "" + error);
 		
-			}
+		}
 			c.destroy();
 		} catch (IOException e) {
 			ServerAPI.logError(e);
 		}
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
+	public static final void convertToString (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(convertToString)>> ---
+		// @sigtype java 3.5
+		// [i] object:1:required list
+		// [i] field:0:optional separator
+		// [o] field:0:required out
+		// pipeline in
+		
+		IDataCursor pipelineCursor = pipeline.getCursor();
+		Object[] list = IDataUtil.getObjectArray(pipelineCursor, "list");
+		String separator = IDataUtil.getString(pipelineCursor, "separator");
+		
+		// process
+		
+		if (separator == null)
+			separator = System.lineSeparator();
+		
+		String out = "";
+		
+		if (list != null) {
+			
+			for(Object o : list) {
+				out += "\"" + o.toString() + "\"" + separator;
+			}
+			
+			if (list.length > 0)
+				out = out.substring(0, out.length()-1);
+		}
+		
+		// pipeline out
+		
+		IDataUtil.put(pipelineCursor, "out", out);
+		pipelineCursor.destroy();
 		// --- <<IS-END>> ---
 
                 
@@ -367,6 +422,21 @@ public final class _priv
 	}
 
 	// --- <<IS-START-SHARED>> ---
+	
+	public static boolean allowAutomaticRun() {
+		
+		try {
+		    GlobalVariablesManager manager = GlobalVariablesManager.getInstance();
+		    GlobalVariables.GlobalVariableValue gvValue = manager.getGlobalVariableValue("jc.test.runner.manual");
+		    
+		    String value = gvValue.getValue();
+		    
+		    return !value.equalsIgnoreCase("true");
+		}
+		catch (Exception e) {
+			return true;
+		}
+	}
 	
 	public static String[] availableCases() {
 	
