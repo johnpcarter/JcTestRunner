@@ -61,7 +61,7 @@ http://<host>:<port>/rad/jc.test.runner:api/run/JcHelloWorld
 
 ## PRE-REQUISITES
 
-This package only run on either Linux or macOS installations and will not on Windows.
+This package only runs on either Linux or macOS installations and will not on Windows.
 
 You will also need to set your IS server credentials if not defaults for tests to execute
 ```
