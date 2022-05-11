@@ -42,39 +42,39 @@ chmod u+x ./ant/bin/antRun*
 chmod u+x ./ant/bin/complete*.*
 chmod u+x ./ant/bin/ant
 
-if [ "${server}x" != "x" ] 
+if [ "${is_test_server}x" != "x" ] 
 then
-	replace_text_properties localhost ${server};
+	replace_text_properties localhost ${is_test_server};
 fi
 
-if [ "${port}x" != "x" ] 
+if [ "${is_test_port}x" != "x" ] 
 then
-	replace_text_properties 5555 ${port};
+	replace_text_properties 5555 ${is_test_port};
 fi
 
-if [ "${is_user}x" != "x" ] 
+if [ "${is_test_user}x" != "x" ] 
 then
-	replace_text_properties Administrator ${is_user};
+	replace_text_properties Administrator ${is_test_user};
 fi
 
-if [ "${is_password}x" != "x" ] 
+if [ "${is_test_password}x" != "x" ] 
 then
-	replace_text_properties manage ${is_password};
+	replace_text_properties manage ${is_test_password};
 fi
 
 if [ "${1}x" != "x" ]
 then
-	is_package=$1
+	is_test_package=$1
 fi
 
-if [ "${is_package}x" == "x" ]
+if [ "${is_test_package}x" == "x" ]
 then
-	is_package="*"
+	is_test_package="*"
 fi
 
 touch ../pub/running.txt
 
-ant -f run-test-suites.xml -Dpackage=${is_package} runall-test
+ant -f run-test-suites.xml -Dpackage=${is_test_package} runall-test
 
 rm ../pub/running.txt
 touch ../pub/completed.txt
