@@ -25,9 +25,13 @@ you can even pull the test results if you don’t want to use the web page.
 http://<host>:<port>/rad/jc.test.runner:api/instances/pull 
 ```
 
-If you don't want to run packages automatically then set the global variables
+### Running tests manually
 
+If you don't want to run packages automatically then set the global variable
+
+```
 jc.test.runner.manual=true
+```
 
 in which case you will need to run tests manually via the service
 
