@@ -59,7 +59,7 @@ fi
 
 if [ "${is_password}x" != "x" ] 
 then
-	replace_text_properties Administrator ${is_password};
+	replace_text_properties manage ${is_password};
 fi
 
 if [ "${1}x" != "x" ]
