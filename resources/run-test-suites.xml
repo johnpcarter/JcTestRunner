@@ -54,13 +54,15 @@ You can update/modify "runall-test" target to exclude/include test suite package
 	</path>
 
 	<target name="runall-test">
+		<property name="packages" value="*" />
+		<property name="exclude" value=".*" />
 		<taskdef resource="net/sf/antcontrib/antcontrib.properties" uri="antlib:net.sf.antcontrib" classpathref="classpath.all" />
 		<taskdef uri="antlib:net.sf.antcontrib" resource="net/sf/antcontrib/antlib.xml" classpathref="classpath.all" />
 		<basename property="current.project" file="${basedir}"/>
 		<dirset id="dist.contents" dir="${webMethods.projects.location}">
 			<!--include name="WmServiceMockSamples" /-->
-			<include name="*"/>
-			<exclude name=".*"/>
+			<include name="${packages}"/>
+			<exclude name="${exclude}"/>
 			<exclude name="RemoteSystemsTempFiles"/>
 			<exclude name="${current.project}"/>
 		</dirset>
