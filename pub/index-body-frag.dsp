@@ -60,8 +60,13 @@ function inIframe () {
 						<div style="float: left; line-height: 25px; text-align: middle; padding: 5px">%value name%
 						<a href="./results/html"><i class="fas fa-poll-h" style="font-size: 1.5em; color: Tomato;"></i>
 						</div>
-						<div style="float: right; line-height: 25px; text-align: middle; padding: 5px; color: white;">Download
-						<a href="/rad/jc.test.runner:api/instances/pull"><i class="fas fa-file-download" style="font-size: 1.5em; color: white;"></i>
+						<div style="float: right; line-height: 25px; text-align: middle; padding: 5px; color: white; display: flex">
+							<div> Execute
+							<a href=".?run=true&package=%value name%"> <i class="fas fa-rocket" style="font-size: 1.5em; color: white;"></i> </a>
+							</div>
+							<div style="margin-left: 20px"> Download
+								<a href="/rad/jc.test.runner:api/instances/pull"><i class="fas fa-file-download" style="font-size: 1.5em; color: white;"></i>
+								</div>
 						</div>
 					</TD>
 				</TR>

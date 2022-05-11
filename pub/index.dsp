@@ -24,7 +24,7 @@
      
      <table width="100%">
       <tr>
-         <td class="menu-navigator" style="border:none" colspan=2>packages &gt; JcTestRunner &gt; <a href=".?run=true"> RUN </a> </td>
+         <td class="menu-navigator" style="border:none" colspan=2>packages &gt; JcTestRunner &gt;</td>
       </tr>
 	</table>
   <div style="position: absolute; top: 90px; bottom: 10px; left: 0px; right: 0px; overflow-y: scroll">
