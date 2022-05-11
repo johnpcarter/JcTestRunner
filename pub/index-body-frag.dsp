@@ -2,21 +2,26 @@
     <link rel="stylesheet" type="text/css" href="/WmRoot/top.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+	
 %ifvar run -notempty%
 		%invoke jc.test.runner.services:run%
 		%endinvoke%
 		<script language="JavaScript">
 			window.alert("Running test cases, refresh page to see test results")
 			
-			if (inIframe())
-				window.self.location.href="./index-body-frag.dsp"
-			else
-				window.self.location.href="."
+			window.self.location.href="."
 		</script>
 %endif%
 
 <script language="JavaScript">
+
+function inIframe () {
+	try {
+		return window.self !== window.top;
+	} catch (e) {
+		return true;
+	}
+}
 
 function refresh(args) {
 	
@@ -38,14 +43,6 @@ function showHistory(args) {
 	return false;
 }
 
-function inIframe () {
-    try {
-        return window.self !== window.top;
-    } catch (e) {
-        return true;
-    }
-}
-
 </script>
 <div align="center" style="width:100%; margin-left: auto; margin-right: auto ;">
 	%invoke jc.test.runner.services:cases%
@@ -58,7 +55,7 @@ function inIframe () {
   				<TR>
 					<TD CLASS="heading" colspan="8">
 						<div style="float: left; line-height: 25px; text-align: middle; padding: 5px">%value name%
-						<a href="./results/html"><i class="fas fa-poll-h" style="font-size: 1.5em; color: Tomato;"></i>
+						<a href="./results/html"><i class="fas fa-poll-h" style="font-size: 1.5em; color: Tomato;"></i></a>
 						</div>
 						<div style="float: right; line-height: 25px; text-align: middle; padding: 5px; color: white; display: flex">
 							<div> Execute
