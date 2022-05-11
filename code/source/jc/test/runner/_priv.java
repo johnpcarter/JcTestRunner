@@ -63,9 +63,6 @@ public final class _priv
 		IDataCursor c = pipeline.getCursor();
 		String packageName = IDataUtil.getString(c, "package");
 		
-		if (!allowAutomaticRun()) 
-			return;
-		
 		try {
 			Process proc1 = Runtime.getRuntime().exec(String.format("chmod u+x ./packages/JcTestRunner/resources/run-all-tests.sh", "./packages/JcTestRunner/resources"));
 			
@@ -322,7 +319,9 @@ public final class _priv
 	{
 		// --- <<IS-START(runTests)>> ---
 		// @sigtype java 3.5
-		new ServerStartupNotifier().registerForStartup("jc.test.runner._priv:_run", pipeline);
+		if (allowAutomaticRun()) {
+			new ServerStartupNotifier().registerForStartup("jc.test.runner._priv:_run", pipeline);
+		}
 		// --- <<IS-END>> ---
 
                 

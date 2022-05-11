@@ -1,6 +1,6 @@
 ## JcTestRunner
 
-Automatically scans all of your packages looking for wm test suites, run thems and copies the results to the JcTestRunners pub folder so that you can view the tests online i.e.
+Automatically scans all of your packages looking for wm test suites, run them and copies the results to the JcTestRunners pub folder so that you can view the tests online i.e.
 
 ```
 http://<host>:<port>/JcTestRunner
@@ -23,6 +23,12 @@ response: NONE, COMPLETED, FAILED
 you can even pull the test results if you don’t want to use the web page.
 ```
 http://<host>:<port>/rad/jc.test.runner:api/instances/pull 
+```
+
+if you don't want to run all test cases then you can specify which package to test when starting the container via the following environment variable.
+
+```
+-Dis_package=JcHelloWorld
 ```
 
 ### Running tests manually
