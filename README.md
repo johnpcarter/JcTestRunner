@@ -28,7 +28,7 @@ http://<host>:<port>/rad/jc.test.runner:api/instances/pull
 if you don't want to run all test cases then you can specify which package to test when starting the container via the following environment variable.
 
 ```
--Dis_test_package=JcHelloWorld
+-e is_test_package=JcHelloWorld
 ```
 
 ### Running tests manually
@@ -68,6 +68,12 @@ You will also need to set your IS server credentials if not defaults for tests t
 export is_test_user=<user>
 export is_test_password=<password>
 ```
+
+or if starting as a container
+```
+-e is_test_user=<user> -e is_test_password=<password>
+```
+
 
 Set the following properties if you want to run the test on a remote server.
 ```
