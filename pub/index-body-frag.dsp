@@ -47,7 +47,7 @@ function showHistory(args) {
 <div align="center" style="width:100%; margin-left: auto; margin-right: auto ;">
 	%invoke jc.test.runner.services:cases%
 	%loop results%
-		<h2>%value containerName%</h2>
+		<h2>%value name%</h2>
 		%loop instances%
 		%loop testSuites%
 		<TABLE class="tableForm" width="90%">
